@@ -3,7 +3,7 @@
 音源 + コントローラ
 開発者向けソースコード
 
-##ハードウェア要求
+## ハードウェア要求
 Raspberry Pi 3
 Audio interface
 USBケーブル
@@ -20,3 +20,9 @@ RaspberryPi と オーディオインターフェースをUSBケーブルで接�
 Raspberry PiのローカルIPv4アドレスへ通信します。
 シンセサイザーの音源はScalaで動きます。
 オーディオインターフェースのMidi Inからの信号で、オーディオインターフェースのLine Outへ出力信号が送られます。
+
+## ソフトウェア開発環境要求
+GraalVM (コントローラーのビルドに必要です)
+コントローラーのビルド等については拙著書き記事をご参照ください…
+https://qiita.com/OtonakiKewa/items/cfaf7ea4c54f34773e63
+
