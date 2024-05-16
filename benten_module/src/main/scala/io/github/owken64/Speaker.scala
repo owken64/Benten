@@ -26,6 +26,16 @@ class AudioOut(val bitDepth:Int,val sampleRate:Int) {
     line.write(wave,0,wave.length)
     }
   }
+
+  def unsafePlay(wave_func: Double => Double, freq: Double, time: Double): Unit = {
+    val format = new AudioFormat(sampleRate.toFloat, bitDepth, 1, true, true)
+    val line = AudioSystem.getSourceDataLine(format)
+
+    line.open(format)
+    line.start()
+    val buff = generateWave(bitDepth, sampleRate, wave_func, freq, time)
+    line.write(buff,0,buff.length)
+  }
 }
 
 object AudioOut {
